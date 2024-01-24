@@ -5,18 +5,12 @@ services:
     image: zama-client-image
     container_name: zama-client-container
     build:
-      context: ./zama-client # Adjust the path to your zama-client project
+      context: ./zama-client
       dockerfile: Dockerfile
-    # depends_on:
-    #   - zama-server
-    # command: ["upload", "--folder_path", "/app/data"] # Adjust the command to start your client with upload parameters
-    environment:
-      - SERVER_URL=http://zama-server:5000/v1/api
-    # # command: ["./zama-client"] # Adjust the command to start your client
+    env_file:
+      - ./zama-client/.env
     networks:
       - zama_network
-    # volumes:
-    #   - ./zama-client-data:/app/data
 
   zama-server:
     image: zama-server-image
@@ -24,10 +18,10 @@ services:
     build:
       context: ./zama-server
       dockerfile: Dockerfile
-    # env_file:
-    #   - ./zama-server/.env
+    env_file:
+      - ./zama-server/.env
     ports:
-      - "5000:5000"
+      - "8080:8080"
     command: ["./zama-server"]
     networks:
       - zama_network
