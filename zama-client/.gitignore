@@ -1,0 +1,9 @@
+Cargo.lock
+
+/target/
+/dist/
+/build/
+/.cargo/
+.env
+
+.DS_Store

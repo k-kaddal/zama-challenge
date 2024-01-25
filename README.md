@@ -6,7 +6,7 @@ For the Zama Merkle Chalenge, the solution implements two main components: zama-
 
 To get started with the Zama Merkle Tree project, follow these steps:
 
-0. Rename the `.env.sample` to `.env`for both zama-client and zama-server
+0. Rename the `.env.sample` to `.env`for both zama-client and zama-server:
    `mv ./zama-client/.env.sample ./zama-client/.env && mv ./zama-server/.env.sample ./zama-server/.env`
 
 1. Grant execution permissions to the necessary scripts:
